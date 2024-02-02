@@ -72,7 +72,7 @@ const modalContent = document.querySelector(".modal-content");
 
 closeButton.addEventListener("click", (e) => {
   modalWindow.style.display = "none";
-  container.style.display = "block";
+  container.style.display = "flex";
 });
 
 const resultMessage = document.createElement("div");
@@ -97,3 +97,13 @@ const resultPage = (myUsableResponse) => {
   modalWindow.appendChild(resultMessage);
   modalWindow.appendChild(closeResult);
 };
+
+// const loadData = async () => {
+//   const response = await fetch(
+//     'https://test-api.codingbootcamp.cz/data-path="/api/2a8117b3/events/registrations'
+//   );
+//   const data = await response.json();
+//   console.log(data);
+// };
+
+// loadData();
