@@ -1,0 +1,44 @@
+
+
+
+
+File Notes
+
+Create a class Event {
+    constructor (name, date, description, image) {
+        this.name = name;
+        this.date = date;
+        this.description = description;
+        this.image = image;
+        this.button = document.createElement ('button')
+        this.button.textContent = "Register";
+
+        this.displayData()
+    }
+
+    loadData () {
+        fetch > to get array of data
+    }
+    displayData () {
+        this.loadData()
+        data.forEach >
+        create elements
+    }
+
+}
+
+- Malika: Navigation, create CSS style class for Event section
+- Akhil: write Event class + fetch data 
+- Christie: form  + button + post
+
+
+1. create Navigation bar
+2. write class & fetch data
+3. style the section in CSS - 
+4. Click on Register button > show a registration Pop-up/window (form)
+5. create Form in HTML + CSS style : display: none; + a seperated CSS class (display: block)
+  - Close button
+  - Submit button
+6. Add eventlistener on the button  Register > add a CSS class display
+7. Add eventlisten on the button Close > remove the CSS class display
+8. Add eventlistener on the button Submit > POST request to API > wait for response > show text "Registered" after receiving response Success
