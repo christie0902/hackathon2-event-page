@@ -1,1 +1,73 @@
 //create style for event section
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #D4F1F4;
+}
+
+.nav {
+    display: flex;
+    width: 100%;
+    height: max-content;
+    background-color: #D4F1F4;
+    overflow: auto;
+}
+
+.navigationMain {
+    display: flex;
+    font-size: 1.5rem;
+    position: relative;
+    left: 30cm;
+    margin: 2rem;
+    width: 15%;
+    justify-content: space-between;
+}
+
+.eventContainer {
+
+    background-color: #75E6DA;
+}
+
+.navigationEvents {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 2rem;
+}
+
+h1 {
+    font-weight: bold;
+    text-align: center;
+}
+
+p {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.image {
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+    height: auto;
+}
+
+.card {
+    display: flex;
+}
+
+.textContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    float: right;
+}
