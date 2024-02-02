@@ -51,11 +51,10 @@ const modalWindow = document.getElementById("myModal");
 const closeButton = document.querySelector(".close");
 const modalContent = document.querySelector(".modal-content");
 
-const closeModal = () => {
-  closeButton.addEventListener("click", (e) => {
-    modalWindow.style.display = "none";
-  });
-};
+closeButton.addEventListener("click", (e) => {
+  modalWindow.style.display = "none";
+  console.log(event);
+});
 
 const resultMessage = document.createElement("div");
 resultMessage.classList.add("resultMessage");

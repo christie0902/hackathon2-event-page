@@ -7,18 +7,34 @@
     <link rel="stylesheet" href="./css/form.scss" />
   </head>
   <body>
-    <!-- create navigation bar -->
-    <nav class="nav"></nav>
-    <section class="eventContainer">
-      <!-- Create styling for this part with flex
-        <div class=card> 
-            <img class="image" src="" alt=""">
-            <h1>Event name</h1>
-            <p>Event description...</p>
-            <button class="button">Register</button>
-        </div> -->
-    </section>
+    <div class="container"></div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1 class="title">Register for the event</h1>
+        <form class="form">
+          <div class="name-field">
+            <label for="fname">First Name</label>
+            <input type="text" class="fname" id="fname" required />
+            <label for="name">Surname</label>
+            <input type="text" class="surname" id="surname" />
+          </div>
+          <div class="contact">
+            <label for="email">Email</label>
+            <input type="email" class="email" id="email" required />
+            <label for="phone">Phone Number</label>
+            <input type="tel" class="phone" id="phone" />
+          </div>
 
-    <a href="html/form.html">Form</a>
+          <div class="checkbox">
+            <input type="checkbox" id="isAdult" name="isAdult" />
+            <label for="isAdult">I'm old enough</label>
+          </div>
+        </form>
+        <button class="submit">Submit</button>
+      </div>
+    </div>
+
+    <script src="/src/script.js" type="module"></script>
   </body>
 </html>
