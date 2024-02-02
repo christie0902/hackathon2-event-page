@@ -1,5 +1,11 @@
 import { Event } from "./component/event.js";
-
+const form = document.querySelector(".modal");
+const fname = document.getElementById("fname");
+const surname = document.getElementById("surname");
+const email = document.getElementById("email");
+const phone = document.getElementById("phone");
+const isAdult = document.getElementById("isAdult");
+const submitButton = document.querySelector(".submit");
 //get data from api
 //loop throgh the items
 //create elements
@@ -16,6 +22,8 @@ async function fetchData() {
   return dataArr;
 }
 
+let eventID;
+
 async function loadAndRenderEvents() {
   const container = document.querySelector(".container");
   const events = await fetchData();
@@ -24,21 +32,18 @@ async function loadAndRenderEvents() {
     container.appendChild(newEvent.element);
     newEvent.button.addEventListener("click", (event) => {
       form.style.display = "block";
+      form.setAttribute("id", `${newEvent.id}`);
       container.style.display = "none";
     });
   }
 }
 
-const form = document.querySelector(".modal");
-const fname = document.getElementById("fname");
-const surname = document.getElementById("surname");
-const email = document.getElementById("email");
-const phone = document.getElementById("phone");
-const isAdult = document.getElementById("isAdult");
-const submitButton = document.querySelector(".submit");
-
-const submitData = async () => {
-  const url = `https://test-api.codingbootcamp.cz/api/2a8117b3/events/${newEvent.id}/registrations`;
+submitButton.addEventListener("click", (event) => {
+  eventID = form.getAttribute("id");
+  submitData(eventID);
+});
+const submitData = async (id) => {
+  const url = `https://test-api.codingbootcamp.cz/api/2a8117b3/events/${id}/registrations`;
   const myDataObject = {
     firstname: `${fname.value}`,
     surname: `${surname.value}`,
@@ -56,13 +61,7 @@ const submitData = async () => {
   const myUsableResponse = await myResponse.json();
   console.log(myUsableResponse);
   resultPage(myUsableResponse);
-  console.log(myUsableResponse);
 };
-
-submitButton.addEventListener("click", (event) => {
-  console.log(event);
-  submitData();
-});
 
 const container = document.querySelector(".container");
 const modalWindow = document.getElementById("myModal");
