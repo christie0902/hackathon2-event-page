@@ -1,4 +1,5 @@
 import { Event } from "./component/event.js";
+
 const form = document.querySelector(".modal");
 const fname = document.getElementById("fname");
 const surname = document.getElementById("surname");
@@ -32,6 +33,7 @@ async function loadAndRenderEvents() {
     container.appendChild(newEvent.element);
     newEvent.button.addEventListener("click", (event) => {
       form.style.display = "block";
+      modalContent.style.display = "flex";
       form.setAttribute("id", `${newEvent.id}`);
       container.style.display = "none";
     });
@@ -81,7 +83,8 @@ closeResult.textContent = "Close";
 closeResult.addEventListener("click", (event) => {
   modalWindow.removeChild(resultMessage);
   modalWindow.removeChild(closeResult);
-  container.style.display = "block";
+  container.style.display = "flex";
+  modalWindow.style.display = "none";
 });
 
 const resultPage = (myUsableResponse) => {

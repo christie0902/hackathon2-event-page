@@ -39,7 +39,6 @@ const submitData = async () => {
   const myUsableResponse = await myResponse.json();
   console.log(myUsableResponse);
   resultPage(myUsableResponse);
-  console.log(myUsableResponse);
 };
 
 submitButton.addEventListener("click", (event) => {
@@ -53,18 +52,10 @@ const modalContent = document.querySelector(".modal-content");
 
 closeButton.addEventListener("click", (e) => {
   modalWindow.style.display = "none";
-  console.log(event);
 });
 
 const resultMessage = document.createElement("div");
 resultMessage.classList.add("resultMessage");
-const closeResult = document.createElement("button");
-closeResult.classList.add("closeResult");
-closeResult.textContent = "Close";
-closeResult.addEventListener("click", (event) => {
-  modalWindow.removeChild(resultMessage);
-  modalWindow.removeChild(closeResult);
-});
 
 const resultPage = (myUsableResponse) => {
   modalContent.style.display = "none";
@@ -76,3 +67,11 @@ const resultPage = (myUsableResponse) => {
   modalWindow.appendChild(resultMessage);
   modalWindow.appendChild(closeResult);
 };
+
+const closeResult = document.createElement("button");
+closeResult.classList.add("closeResult");
+closeResult.textContent = "Close";
+closeResult.addEventListener("click", (event) => {
+  modalWindow.removeChild(resultMessage);
+  modalWindow.removeChild(closeResult);
+});
